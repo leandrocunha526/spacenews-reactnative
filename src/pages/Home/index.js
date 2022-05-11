@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { SafeAreaView, ScrollView, FlatList } from 'react-native';
 import { useNavigation } from "@react-navigation/native";
-import api from "./../services/api";
+import api from "./../../services/api";
 import { Button, Card, Title, Paragraph } from 'react-native-paper';
 import moment from "moment";
-import Fab from '../components/Fab';
+import Fab from '../../components/Fab';
 import {Picker} from '@react-native-picker/picker';
 
 function Home () {
