@@ -12,6 +12,8 @@ function Home () {
 
   const navigation = useNavigation();
 
+  const [selectedAmount] = useState();
+
   useEffect(() => {
     try{
        api.get(`/articles/${data}`).then(res => {
@@ -34,7 +36,8 @@ function Home () {
        onPress={() => navigation.navigate('Details', {
          id: item.id
        })}
-      >Go to details</Button>
+       mode="contained"
+      >Details</Button>
     </Card.Actions>
   </Card>
   );
@@ -43,8 +46,9 @@ function Home () {
      <SafeAreaView>
       <ScrollView>
       <Picker
+        selectedValue={selectedAmount}
         style={{ height: 50, width: 100 }}
-        onValueChange={async (itemValue) => await setData('?_limit=' + itemValue)}
+        onValueChange={async (itemValue, itemIndex) => await setData('?_limit=' + itemValue)}
       >
         <Picker.Item label="10" value="10" />
         <Picker.Item label="25" value="25" />
