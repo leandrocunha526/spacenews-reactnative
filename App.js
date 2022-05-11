@@ -8,6 +8,8 @@ import { StatusBar } from 'expo-status-bar';
 
 import { Appbar } from 'react-native-paper';
 
+import FilterByTitle from "./src/pages/FilterByTitle";
+
 const Stack = createStackNavigator();
 
 function CustomNavigationBar({ navigation, back }) {
@@ -30,6 +32,7 @@ export default function App() {
         }}>
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Details" component={Details} />
+        <Stack.Screen name="FilterByTitle" component={FilterByTitle} />
       </Stack.Navigator>
     </NavigationContainer>
   );

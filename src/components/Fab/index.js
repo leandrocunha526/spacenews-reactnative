@@ -1,11 +1,14 @@
 import React, {useState} from 'react';
 import { StyleSheet } from "react-native";
 import { FAB, Portal, Provider } from 'react-native-paper';
+import { useNavigation } from "@react-navigation/native";
 
 const Fab = () => {
   const [state, setState] = useState({ open: false });
 
   const onStateChange = ({ open }) => setState({ open });
+
+  const navigation = useNavigation();
 
   const { open } = state;
 
@@ -20,12 +23,12 @@ const Fab = () => {
         {
           icon: 'calendar-search',
           label: 'Search by date',
-          onPress: () => console.log('Pressed email'),
+          onPress: () => navigation.navigate('FilterByDate'),
         },
         {
           icon: 'text-box-search-outline',
           label: 'Search by text',
-          onPress: () => console.log('Pressed email'),
+          onPress: () => navigation.navigate('FilterByTitle'),
         },
       ]}
       onStateChange={onStateChange}
