@@ -1,20 +1,36 @@
+import 'react-native-gesture-handler';
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import Home from './src/pages/Home';
+import Details from "./src/pages/Details";
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
 
-export default function App() {
+import { Appbar } from 'react-native-paper';
+
+const Stack = createStackNavigator();
+
+function CustomNavigationBar({ navigation, back }) {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <Appbar.Header>
+      <StatusBar style="light" />
+      {back ? <Appbar.BackAction onPress={navigation.goBack} /> : null}
+      <Appbar.Content title="Space News" />
+    </Appbar.Header>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator
+        initialRouteName="Home"
+        screenOptions={{
+          header: CustomNavigationBar,
+        }}>
+        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="Details" component={Details} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
