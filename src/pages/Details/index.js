@@ -4,6 +4,8 @@ import { useRoute } from "@react-navigation/native";
 import api from '../../services/api';
 import { Title } from "react-native-paper";
 import moment from "moment";
+import * as Linking from 'expo-linking';
+import { Button } from 'react-native-paper';
 
 export default function Details() {
 const [data, setData] = useState([]);
@@ -23,7 +25,6 @@ useEffect(() => {
         <ScrollView>
         <View>
         <Title style={style.title}>{data.title}</Title>
-        <Text style={style.newsSite}>{data.newsSite}</Text>
         </View>
         <View style={style.dates}>
            <Text>Published at {moment(data.publishedAt).format('LLLL')}</Text>
@@ -36,6 +37,14 @@ useEffect(() => {
         />
         <Text sttle={style.paragraph}>{data.summary}</Text>
         </View>
+        <Text style={style.newsSite}>
+        <Button
+          title="See more"
+          mode="contained"
+          onPress={() => Linking.openURL(data.url)}
+          style={style.button}
+        >See more em {data.newsSite}</Button>
+        </Text>
         </ScrollView>
       </SafeAreaView>
     );
@@ -70,5 +79,13 @@ const style = StyleSheet.create({
       width: 400,
       height: 400,
       resizeMode: 'stretch',
+  },
+    button: {
+      alignItems: 'center',
+      justifyContent: 'center',
+      paddingVertical: 12,
+      paddingHorizontal: 32,
+      borderRadius: 4,
+      elevation: 3,
   },
 });
