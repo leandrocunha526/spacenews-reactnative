@@ -7,7 +7,7 @@
     "ios": "expo run:ios",
     "web": "expo start --web",
     "eject": "expo eject",
-    "react-native-start": "react-native start",
+    "react-native-start": "npx react-native start",
     "run-android": "npx react-native run-android"
   },
   "dependencies": {
