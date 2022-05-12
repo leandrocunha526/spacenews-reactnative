@@ -2,6 +2,8 @@
 
 ## Instructions
 
+### Expo
+
 It is recommended to use yarn to install the dependencies, the use of another manager can cause problems according to the problems already reported and for execution it is recommended to have the expo-cli installed globally.
 
 Install dependencies: `yarn`  
@@ -9,6 +11,8 @@ Install dependencies: `yarn`
 Execute: `yarn start` (this uses expo-cli)
 
 or
+
+### React Native CLI
 
 To use react-native CLI, Gadle, Metro and Bundle
 
