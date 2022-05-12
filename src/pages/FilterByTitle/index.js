@@ -36,7 +36,7 @@ function FilterByTitle () {
          id: item.id
        })}
        mode="contained"
-      >Go to details</Button>
+      >Details</Button>
     </Card.Actions>
   </Card>
   );

@@ -27,7 +27,7 @@ const Fab = () => {
         },
         {
           icon: 'text-box-search-outline',
-          label: 'Search by text',
+          label: 'Search by title',
           onPress: () => navigation.navigate('FilterByTitle'),
         },
       ]}
