@@ -16,11 +16,12 @@ or
 
 To use react-native CLI, Gadle, Metro and Bundle
 
-`npx react-native start`
+
+`npx react-native start` ou `yarn run react-native-start`
 
 and
 
-`npx react-native run-android`
+`npx react-native run-android` ou `yarn run run-android`
 
 Requires Android Studio and AVD.
 
