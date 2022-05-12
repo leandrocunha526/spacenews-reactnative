@@ -8,6 +8,18 @@ Install dependencies: `yarn`
 
 Execute: `yarn start` (this uses expo-cli)
 
+or
+
+To use react-native CLI, Gadle, Metro and Bundle
+
+`npx react-native start`
+
+and
+
+`npx react-native run-android`
+
+Requires Android Studio and AVD.
+
 ## Features
 
 - The home screen displays the most recent articles in a list by cards, displaying title and publishedAt. [done]
