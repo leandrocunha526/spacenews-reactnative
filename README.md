@@ -34,7 +34,7 @@ Requires Android Studio and AVD.
 - Filter for searching articles by publication date between two dates (start and end). [to do]
 - When clicking on an element in the list, the application has navigation to a page that displays all the details of the article, as well as its image. [done]
 
-- Note: Instead of pagination, it is usually common to create filters or a select that can increase the number of items on a mobile device screen. Popular apps that could have this and don't have as examples: Instagram, OneFootball and Facebook. The use gestures is common too. See [Material Design Navigation Patterns](https://material.io/archive/guidelines/patterns/navigation.html#navigation-patterns), [Apple Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines/watchos/overview/getting-started/) and [Android Developer Guide](https://developer.android.com/guide?hl=en-us).
+- Note: Instead of pagination, it is usually common to create filters or a select that can increase the number of items on a mobile device screen. Popular apps that could have this and don't have as examples: Instagram, OneFootball and Facebook. The use of gestures are also common. See [Material Design Navigation Patterns](https://material.io/archive/guidelines/patterns/navigation.html#navigation-patterns), [Apple Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines/watchos/overview/getting-started/) and [Android Developer Guide](https://developer.android.com/guide?hl=en-us).
 
 ### Documentation
 
