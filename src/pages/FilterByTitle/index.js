@@ -5,17 +5,20 @@ import api from "./../../services/api";
 import { Button, Card, Title, Paragraph, Searchbar } from 'react-native-paper';
 import moment from "moment";
 import Fab from '../../components/Fab';
+import { Picker } from '@react-native-picker/picker';
 
 function FilterByTitle () {
   const [data, setData] = useState([]);
   const [searchQuery, setSearchQuery] = React.useState('');
   const onChangeSearch = query => setSearchQuery(query);
 
+  const [limit, selectedAmount] = useState("");
+
   const navigation = useNavigation();
 
   useEffect(() => {
     try{
-       api.get(`/articles/?title_contains=${searchQuery}`).then(res => {
+       api.get(`/articles/?_limit=${limit}&title_contains=${searchQuery}`).then(res => {
         const { data } = res;
         setData(data);
     })
@@ -44,6 +47,16 @@ function FilterByTitle () {
   return (
      <SafeAreaView>
       <ScrollView>
+      <Picker
+        selectedValue={selectedAmount}
+        style={{ height: 50, width: 100 }}
+        onValueChange={async (itemValue, itemIndex) => await selectedAmount(itemValue)}
+      >
+        <Picker.Item label="10" value="10" />
+        <Picker.Item label="25" value="25" />
+        <Picker.Item label="50" value="50" />
+        <Picker.Item label="100" value="100" />
+      </Picker>
       <Searchbar
       placeholder="Search"
       onChangeText={onChangeSearch}
