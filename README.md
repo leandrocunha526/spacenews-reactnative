@@ -4,9 +4,11 @@
 
 ### Expo
 
+To use expo CLI, Metro and Bundle
+
 It is recommended to use yarn to install the dependencies, the use of another manager can cause problems according to the problems already reported and for execution it is recommended to have the expo-cli installed globally.
 
-Install dependencies: `yarn`  
+Install dependencies: `yarn`
 
 Execute: `yarn start` (this uses expo-cli)
 
@@ -17,11 +19,11 @@ or
 To use react-native CLI, Gadle, Metro and Bundle
 
 
-`npx react-native start` ou `yarn run react-native-start`
+`npx react-native start` or `yarn run react-native-start`
 
 and
 
-`npx react-native run-android` ou `yarn run run-android`
+`npx react-native run-android` or `yarn run run-android`
 
 Requires Android Studio and AVD.
 
@@ -35,7 +37,7 @@ Requires Android Studio and AVD.
 
 ### Instead of pagination, it is usually common to create filters or a select that can increase the number of items on a mobile device screen.
 
-### Documentation  
+### Documentation
 
 - [Expo](https://docs.expo.dev/)
 - [React Native](https://reactnative.dev/)
