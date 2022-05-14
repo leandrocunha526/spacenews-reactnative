@@ -43,7 +43,7 @@ useEffect(() => {
           mode="contained"
           onPress={() => Linking.openURL(data.url)}
           style={style.button}
-        >See more em {data.newsSite}</Button>
+        >See more in {data.newsSite}</Button>
         </Text>
         </ScrollView>
       </SafeAreaView>
