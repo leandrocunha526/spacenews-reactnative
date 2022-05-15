@@ -9,7 +9,7 @@ import {
 } from "react-native";
 import { useRoute } from "@react-navigation/native";
 import api from "../../services/api";
-import { Title } from "react-native-paper";
+import { Paragraph, Title } from "react-native-paper";
 import moment from "moment";
 import * as Linking from "expo-linking";
 import { Button } from "react-native-paper";
@@ -40,7 +40,7 @@ export default function Details() {
         </View>
         <View>
           <Image style={style.image} source={{ uri: data.imageUrl }} />
-          <Text sttle={style.paragraph}>{data.summary}</Text>
+          <Paragraph style={style.paragraph}>{data.summary}</Paragraph>
         </View>
         <Text style={style.newsSite}>
           <Button
