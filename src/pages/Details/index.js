@@ -70,7 +70,6 @@ const style = StyleSheet.create({
   },
   paragraph: {
     fontSize: 20,
-    fontWeight: "bold",
   },
   newsSite: {
     fontSize: 15,
