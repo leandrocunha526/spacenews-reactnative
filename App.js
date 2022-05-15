@@ -9,6 +9,7 @@ import { StatusBar } from 'expo-status-bar';
 import { Appbar } from 'react-native-paper';
 
 import FilterByTitle from "./src/pages/FilterByTitle";
+import FilterByDate from './src/pages/FilterByDate';
 
 const Stack = createStackNavigator();
 
@@ -33,6 +34,7 @@ export default function App() {
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Details" component={Details} />
         <Stack.Screen name="FilterByTitle" component={FilterByTitle} />
+        <Stack.Screen name="FilterByDate" component={FilterByDate} />
       </Stack.Navigator>
     </NavigationContainer>
   );
