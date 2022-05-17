@@ -64,7 +64,6 @@ export default function FilterByDate() {
           blockSingleDateSelection={true}
           responseFormat="YYYY-MM-DD"
           maxDate={moment()}
-          minDate={moment().subtract(100, "days")}
           selectedDateContainerStyle={styles.selectedDateContainerStyle}
           selectedDateStyle={styles.selectedDateStyle}
         />
