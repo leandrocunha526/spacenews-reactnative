@@ -50,7 +50,7 @@ Requires Android Studio and AVD.
 During the tests in the development of this project in React Native, this problem occurred and the problem was solved.  
 Issues about this have already been reported here on GitHub.
 
-### How to play:
+### How to reproduce:
 
 - Create a project with expo.
 - Just run expo start with one of the existing [Datepickers](https://material.io/components/date-pickers) packages.
