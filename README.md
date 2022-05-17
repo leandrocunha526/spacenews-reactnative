@@ -58,3 +58,5 @@ Issues about this have already been reported here on GitHub.
 - [React Native directory datepicker](https://reactnative.directory/?search=datepicker)
 - [Adding custom native code](https://docs.expo.dev/workflow/customizing/) (solution)
 - [Android Native Modules](https://reactnative.dev/docs/native-modules-android) (example documentation)
+
+See ["expo start" command doesn't work](https://github.com/henninghall/react-native-date-picker/issues/458)
