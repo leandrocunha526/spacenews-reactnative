@@ -42,3 +42,19 @@ Requires Android Studio and AVD.
 - [React Native](https://reactnative.dev/)
 - [React Native Paper](https://callstack.github.io/react-native-paper/)
 - [React Navigation](https://reactnavigation.org/)
+
+## Note
+
+**This is just a note**
+
+During the tests in the development of this project in React Native, this problem occurred and the problem was solved.  
+Issues about this have already been reported here on GitHub.
+
+### How to play:
+
+- Create a project with expo.
+- Just run expo start with one of the existing [Datepickers](https://material.io/components/date-pickers) packages.
+
+- [React Native directory datepicker](https://reactnative.directory/?search=datepicker)
+- [Adding custom native code](https://docs.expo.dev/workflow/customizing/) (solution)
+- [Android Native Modules](https://reactnative.dev/docs/native-modules-android) (example documentation)
