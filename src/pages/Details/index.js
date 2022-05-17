@@ -6,27 +6,31 @@ import {
   Image,
   SafeAreaView,
   ScrollView,
+  TouchableOpacity
 } from "react-native";
-import { useRoute } from "@react-navigation/native";
 import api from "../../services/api";
-import { Paragraph, Title } from "react-native-paper";
+import { Paragraph, Title, Button } from "react-native-paper";
 import moment from "moment";
 import * as Linking from "expo-linking";
-import { Button } from "react-native-paper";
 import Fab from "./../../components/Fab";
 
-export default function Details() {
+export default function Details({route}) {
   const [data, setData] = useState([]);
-
-  const route = useRoute();
-
-  const { id } = route.params;
+  const [id, setId] = useState(route.params.id);
 
   useEffect(() => {
     api.get(`/articles/${id}`).then((response) => {
       setData(response.data);
     });
-  }, []);
+  }, [data]);
+
+  const nextArticle = () => {
+    setId(data.id + 1);
+};
+
+const previousArticle = () => {
+    setId(data.id - 1);
+}
 
   return (
     <SafeAreaView style={style.container}>
@@ -36,22 +40,38 @@ export default function Details() {
         </View>
         <View style={style.dates}>
           <Text>Published at {moment(data.publishedAt).format("LLLL")}</Text>
-          <Text>Updated at {moment(data.UpdatedAt).format("LLLL")}</Text>
+          <Text>Updated at {moment(data.updatedAt).format("LLLL")}</Text>
         </View>
         <View>
           <Image style={style.image} source={{ uri: data.imageUrl }} />
           <Paragraph style={style.paragraph}>{data.summary}</Paragraph>
         </View>
-        <Text style={style.newsSite}>
+        <View style={style.newsSite}>
           <Button
             title="See more"
             mode="contained"
             onPress={() => Linking.openURL(data.url)}
-            style={style.button}
+            style={style.buttonLink}
           >
             See more in {data.newsSite}
           </Button>
-        </Text>
+          </View>
+          <View>
+          <TouchableOpacity
+            onPress={() => previousArticle()}
+            style={style.buttonPrevious}
+          >
+            <Text>Previous article</Text>
+          </TouchableOpacity>
+          </View>
+          <View>
+          <TouchableOpacity
+            onPress={() => nextArticle()}
+            style={style.buttonNext}
+          >
+            <Text>Next article</Text>
+          </TouchableOpacity>
+          </View>
       </ScrollView>
       <Fab></Fab>
     </SafeAreaView>
@@ -72,9 +92,7 @@ const style = StyleSheet.create({
     fontSize: 20,
   },
   newsSite: {
-    fontSize: 15,
     alignSelf: "center",
-    textAlign: "center",
   },
   dates: {
     alignSelf: "center",
@@ -87,7 +105,7 @@ const style = StyleSheet.create({
     height: 400,
     resizeMode: "stretch",
   },
-  button: {
+  buttonLink: {
     alignItems: "center",
     justifyContent: "center",
     paddingVertical: 12,
@@ -95,4 +113,26 @@ const style = StyleSheet.create({
     borderRadius: 4,
     elevation: 3,
   },
+  buttonPrevious: {
+    backgroundColor: "#FF6961",
+    alignItems: "center",
+    marginBottom: 10,
+    marginRight: 0,
+    padding: 5,
+    paddingVertical: 12,
+    paddingHorizontal: 32,
+    borderRadius: 4,
+    elevation: 3,
+  },
+  buttonNext: {
+    backgroundColor: "#ADD8E6",
+    alignItems: "center",
+    marginBottom: 10,
+    marginRight: 0,
+    padding: 5,
+    paddingVertical: 12,
+    paddingHorizontal: 32,
+    borderRadius: 4,
+    elevation: 3,
+  }
 });

@@ -33,6 +33,7 @@ Requires Android Studio and AVD.
 - The splash screen must contain an input for searching the title text, using endpoint title_contains=TEXTO, including "text with spaces and other special characters". [done]
 - Filter for searching articles by publication date between two dates (start and end). [done]
 - When clicking on an element in the list, the application has navigation to a page that displays all the details of the article, as well as its image. [done]
+- Previous and next article in details. The plan was to insert this feature using gestures and it will be introduced with buttons. Not the best solution due to non-sequential identification of articles (known problem). [done]
 
 - Note: Instead of pagination, it is usually common to create filters or a select that can increase the number of items on a mobile device screen. Popular apps that could have this and don't have as examples: Instagram, OneFootball and Facebook. The use of gestures are also common. See [Material Design Guidelines](https://material.io/archive/guidelines), [Apple Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines) and [Android Developer Guide](https://developer.android.com/guide).
 
