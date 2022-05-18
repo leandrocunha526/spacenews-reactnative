@@ -12,17 +12,19 @@ import api from "./../../services/api";
 import moment from "moment";
 import Fab from "./../../components/Fab";
 import DateRangePicker from "rn-select-date-range";
+import { Picker } from "@react-native-picker/picker";
 
 export default function FilterByDate() {
   const [data, setData] = useState([]);
   const [selectedRange, setRange] = useState({});
+  const [limit, setLimit] = useState("");
   const navigation = useNavigation();
 
   useEffect(() => {
     try {
       api
         .get(
-          `/articles/?_limit=${50}&publishedAt_gte=${selectedRange.firstDate}&publishedAt_lte=${selectedRange.secondDate}`
+          `/articles/?_limit=${limit}&publishedAt_gte=${selectedRange.firstDate}&publishedAt_lte=${selectedRange.secondDate}`
         )
         .then((res) => {
           const { data } = res;
@@ -67,7 +69,17 @@ export default function FilterByDate() {
           selectedDateContainerStyle={styles.selectedDateContainerStyle}
           selectedDateStyle={styles.selectedDateStyle}
         />
-        <Text>Showing 50 articles from {moment(selectedRange.firstDate).format("LLLL")} to {moment(selectedRange.secondDate).format("LLLL")}
+        <Picker
+        selectedValue={limit}
+        style={{ height: 50, width: 100 }}
+        onValueChange={(value, index) => setLimit(value)}
+      >
+        <Picker.Item label="10" value="10" />
+        <Picker.Item label="25" value="25" />
+        <Picker.Item label="50" value="50" />
+        <Picker.Item label="100" value="100" />
+      </Picker>
+        <Text>Showing articles from {moment(selectedRange.firstDate).format("LLLL")} to {moment(selectedRange.secondDate).format("LLLL")}
         </Text>
         <FlatList data={data} renderItem={renderItem} />
       </ScrollView>

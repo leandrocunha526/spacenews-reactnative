@@ -9,10 +9,10 @@ import { Picker } from '@react-native-picker/picker';
 
 function FilterByTitle () {
   const [data, setData] = useState([]);
-  const [searchQuery, setSearchQuery] = React.useState('');
+  const [searchQuery, setSearchQuery] = useState('');
   const onChangeSearch = query => setSearchQuery(query);
 
-  const [limit, selectedAmount] = useState("");
+  const [limit, setLimit] = useState("");
 
   const navigation = useNavigation();
 
@@ -48,9 +48,9 @@ function FilterByTitle () {
      <SafeAreaView>
       <ScrollView>
       <Picker
-        selectedValue={selectedAmount}
+        selectedValue={limit}
         style={{ height: 50, width: 100 }}
-        onValueChange={async (itemValue, itemIndex) => await selectedAmount(itemValue)}
+        onValueChange={(value, index) => setLimit(value)}
       >
         <Picker.Item label="10" value="10" />
         <Picker.Item label="25" value="25" />
