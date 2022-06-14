@@ -56,7 +56,7 @@ Issues about this have already been reported here on GitHub.
 - Create a project with expo.
 - Just run expo start with one of the existing [Datepickers](https://material.io/components/date-pickers) packages.
 
-- [React Native directory datepicker](https://reactnative.directory/?search=datepicker)
+- [React Native Directory datepicker](https://reactnative.directory/?search=datepicker)
 - [Adding custom native code](https://docs.expo.dev/workflow/customizing/) (solution)
 - [Android Native Modules](https://reactnative.dev/docs/native-modules-android) (example documentation)
 
